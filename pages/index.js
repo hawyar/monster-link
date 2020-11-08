@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout>
       <Nav />
-      <Hero />
+      {/* <Hero /> */}
       <GridView />
       {/* <Form /> */}
     </Layout>
