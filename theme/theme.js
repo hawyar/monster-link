@@ -9,7 +9,7 @@ export const theme = {
     primary: '#1089ff',
     secondary: '#23374d',
     gray: '#e5e5e5',
-    white: '#eeeeees',
+    white: '#eeeeee',
   },
   fonts: {
     main: 'Manrope',

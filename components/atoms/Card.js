@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import ExternalLink from '../SVG/ExternalLink';
+import Badge from './Badge';
+import { motion } from 'framer-motion';
 
 function truncString(str, max, add) {
   add = add || '...';
@@ -9,17 +11,27 @@ function truncString(str, max, add) {
 }
 
 const Card = ({ data }) => {
-  const { Name, URL, Description } = data.item?.fields || data.fields;
-  console.log(data.item);
+  const { Name, URL, Description, Category } = data.item
+    ? data.item.fields
+    : data.fields;
+
   return (
     <Wrapper>
       <h3>{Name}</h3>
       <a href={URL} target='_blank' rel='noopener noreferrer'>
-        <IconWrapper>
-          <ExternalLink width={20} color='#000' />
+        <IconWrapper
+          whileHover={{ scale: 1.08 }}
+          transition={{ ease: 'easeOut', duration: 0.2 }}
+        >
+          <ExternalLink width={20} color='#fff' />
         </IconWrapper>
       </a>
-      <p>{truncString(Description, 80, '...')}</p>
+      <p>{truncString(Description, 50, '...')}</p>
+      <BadeWrapper>
+        {Category.map((el) => {
+          return <Badge data={el} />;
+        })}
+      </BadeWrapper>
     </Wrapper>
   );
 };
@@ -28,8 +40,8 @@ const Wrapper = styled.div`
   position: relative;
   box-shadow: 10px 10px 118px 13px rgba(0, 0, 0, 0.06);
   margin-top: 3rem;
-  background-color: ${({ theme }) => theme.colors.white};
-  padding: 1rem;
+  background-color: #eeeeee;
+  padding: 1.5rem;
   border-radius: 10px;
 
   h3 {
@@ -44,15 +56,22 @@ const Wrapper = styled.div`
     line-height: 1.2;
   }
 
-  height: 120px;
+  min-height: 120px;
+  width: 240px;
 `;
 
-const IconWrapper = styled.span`
+const IconWrapper = styled(motion.span)`
   position: absolute;
   top: 10px;
   right: 10px;
   padding: 10px;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-color: rgba(16, 137, 255, 0.4);
+`;
+
+const BadeWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 `;
 export default Card;

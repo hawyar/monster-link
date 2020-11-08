@@ -53,7 +53,7 @@ const GridView = () => {
 
         <RecentGrid>
           {result.map((record) => (
-            <Card data={record} key={record.id} />
+            <Card data={record} key={record.id || record.item.id} />
           ))}
         </RecentGrid>
       </Wrapper>
