@@ -1,0 +1,30 @@
+{
+  "name": "Monsterlink",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^0.1.0",
+    "axios": "^0.21.0",
+    "fuse.js": "^6.4.3",
+    "graphql": "^15.4.0",
+    "next": "latest",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-hook-form": "^6.7.2",
+    "react-multi-select-component": "^3.0.5",
+    "reflect-metadata": "^0.1.13",
+    "styled-breakpoints": "^8.1.1",
+    "styled-components": "^5.2.1",
+    "styled-reset": "^4.2.3",
+    "swr": "^0.3.8",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.8.0"
+  },
+  "license": "MIT"
+}
