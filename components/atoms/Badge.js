@@ -11,14 +11,18 @@ const Badge = ({ data }) => {
 };
 
 const StyledBadge = styled.div`
-  padding: 5px 8px;
-  border-radius: 20px;
-  background-color: #cfdfff;
-  display: inline-block;
-  color: #102046;
-  font-size: 12px;
-  bottom: 1rem;
   margin-right: 5px;
   margin-bottom: 5px;
+  padding: 5px 8px;
+  border-radius: 20px;
+  background-color: #e25822;
+  display: inline-block;
+  color: black;
+  font-size: 12px;
+  bottom: 1rem;
+
+  span {
+    font-weight: 500;
+  }
 `;
 export default Badge;

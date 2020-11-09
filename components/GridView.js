@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import useSWR from 'swr';
 import axios from 'axios';
 import Card from './atoms/Card';
-import { up } from 'styled-breakpoints';
+import { up, between } from 'styled-breakpoints';
 import Fuse from 'fuse.js';
 
 const url =
@@ -67,27 +67,34 @@ const GridView = () => {
 };
 
 const Wrapper = styled.div`
-  margin-top: 4rem;
+  margin: 8rem 0 4rem 0;
+  width: 100%;
 `;
 
 const MainHeader = styled.h2`
   color: ${(props) => props.theme.colors.dark};
-  font-size: 1em;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: -0.2px;
 `;
 
 const RecentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
-  ${up('md')} {
+  ${up('sm')} {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2rem;
+  }
+  ${between('sm', 'md')} {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
 const SearchInput = styled(Input)`
   margin-top: 2rem;
   width: 320px;
+  padding: 0.5rem 1rem;
 `;
 
 export default GridView;

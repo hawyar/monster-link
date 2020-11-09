@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Footer from './Footer';
 const Layout = ({ children }) => {
-  return <Container>{children}</Container>;
+  return (
+    <Container>
+      {children}
+      <Footer />
+    </Container>
+  );
 };
 
 const Container = styled.div`

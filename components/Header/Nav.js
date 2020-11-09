@@ -9,36 +9,40 @@ import { up, down, between, only } from 'styled-breakpoints';
 const Nav = () => {
   return (
     <div>
-      <Container>
-        <Flex>
+      <StyledNav>
+        <Wrapper>
           <div>
             <AlientLogo />
           </div>
           <LinkWrapper>
-            <div>
-              <Link href='/thestack'>/thestacks</Link>
-            </div>
-            <div>
-              <Link href='/thestack'>/motionstuff</Link>
-            </div>
-            <div>
-              <Link href='/thestack'>/thestacks</Link>
-            </div>
+            <Link href='/thestack'>» thestacks</Link>
           </LinkWrapper>
-        </Flex>
-      </Container>
+        </Wrapper>
+      </StyledNav>
     </div>
   );
 };
 
-const Flex = styled.div`
-  display: flex;
+const StyledNav = styled.nav`
+  position: fixed;
   width: 100%;
-  flex-direction: column;
+  top: 0;
+  z-index: 12;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  padding: 1rem 12rem;
+  margin: 0 auto;
+  flex-direction: row;
   justify-content: space-between;
-  align-content: center;
-  ${up('md')} {
-    flex-direction: row;
+  align-items: center;
+  width: 100%;
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  ::after {
+    background-color: rgba(214, 214, 214, 0.4);
   }
 `;
 
@@ -47,7 +51,6 @@ const LinkWrapper = styled.div`
   flex-direction: row;
   align-content: center;
 
-  backdrop-filter: blur(35px);
   a {
     color: ${({ theme }) => theme.colors.dark};
     text-decoration: none;
@@ -59,14 +62,5 @@ const LinkWrapper = styled.div`
     }
   }
 `;
-const Title = styled.h1`
-  color: dark;
-  font-size: 1.2em;
 
-  ${up('md')} {
-    font-size: 1.5em;
-  }
-  font-weight: 600;
-  letter-spacing: -0.8px;
-`;
 export default Nav;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import ExternalLink from '../SVG/ExternalLink';
 import Badge from './Badge';
 import { motion } from 'framer-motion';
+import { up, down, between, only } from 'styled-breakpoints';
 
 function truncString(str, max, add) {
   add = add || '...';
@@ -15,6 +16,7 @@ const Card = ({ data }) => {
     ? data.item.fields
     : data.fields;
 
+  console.log(Category);
   return (
     <Wrapper>
       <h3>{Name}</h3>
@@ -23,7 +25,7 @@ const Card = ({ data }) => {
           whileHover={{ scale: 1.08 }}
           transition={{ ease: 'easeOut', duration: 0.2 }}
         >
-          <ExternalLink width={20} color='#fff' />
+          <ExternalLink width={18} color='#fff' />
         </IconWrapper>
       </a>
       <p>{truncString(Description, 50, '...')}</p>
@@ -47,6 +49,10 @@ const Wrapper = styled.div`
   background-color: transparent;
   transition: border 0.3s ease-in-out;
 
+  ${down('sm')} {
+    width: 80%;
+  }
+
   :hover {
     border: 1px solid rgba(0, 0, 0, 0.3);
   }
@@ -68,9 +74,9 @@ const IconWrapper = styled(motion.span)`
   position: absolute;
   top: 10px;
   right: 10px;
-  padding: 10px;
+  padding: 8px;
   border-radius: 50%;
-  background-color: rgba(16, 137, 255, 0.4);
+  background-color: #000;
 `;
 
 const BadeWrapper = styled.div`

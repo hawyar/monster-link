@@ -18,6 +18,7 @@ export default function Home() {
         <meta property='og:title' content='Monster link' key='title' />
       </Head>
       <Nav />
+      <Hero />
 
       <GridView />
     </Layout>
