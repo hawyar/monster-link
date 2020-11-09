@@ -8,19 +8,19 @@ const Hero = () => {
         <Flex>
           <LeftBlock>
             <Title>
-              Your one stop shop <br /> for all the links you will need.
+              Your one stop shop <br /> for all the resources you need.
             </Title>
             <a
-              href='https://dribbble.com/shots/4902089-Minimal-Brand-Guideline'
+              href='https://dribbble.com/shots/13995055-Free-Hanging-ID-Card-Mockup'
               target='_blank'
               rel='noopener noreferrer'
             >
-              <Button>Grab item of the day</Button>
+              <Button>Item of the day</Button>
             </a>
           </LeftBlock>
 
           <RightBlock>
-            <img src='https://cdn.dribbble.com/users/345970/screenshots/14522320/media/1eadfe89684404bfe35350b36970a07d.png' />
+            <img src='https://cdn.dribbble.com/users/1622978/screenshots/13995055/media/189480ca96d18fae67cb9c8daff0166c.jpg' />
           </RightBlock>
         </Flex>
       </Container>
@@ -53,7 +53,7 @@ const RightBlock = styled.div`
   border-radius: 5px;
   margin-top: 2rem;
   box-shadow: 5px 5px 25px 11px rgba(0, 0, 0, 0.03);
-  background-color: red;
+  background-color: transparent;
   ${up('md')} {
     margin-top: 0rem;
     width: 510px;
