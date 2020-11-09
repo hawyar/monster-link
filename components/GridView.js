@@ -8,7 +8,7 @@ import { up } from 'styled-breakpoints';
 import Fuse from 'fuse.js';
 
 const url =
-  'https://api.airtable.com/v0/appO0y82wHen9gi4D/Linkbook?maxRecords=15&view=Grid%20view';
+  'https://api.airtable.com/v0/appO0y82wHen9gi4D/Linkbook?pageSize=50';
 
 const fetcher = () =>
   axios
@@ -23,8 +23,13 @@ const GridView = () => {
   const [search, setSearch] = useState('');
   const { data, error } = useSWR(url, fetcher);
 
-  if (error) return <div>Failed to load - {error.message}</div>;
-  if (!data) return <div>loading...</div>;
+  if (error)
+    return (
+      <Container>
+        <div>Failed to load - {error.message}</div>
+      </Container>
+    );
+  if (!data) return <Container>Loading...</Container>;
 
   const preparedSearch = data.records;
 

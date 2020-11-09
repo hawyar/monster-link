@@ -2,6 +2,8 @@ import React from 'react';
 import AlientLogo from '../SVG/AlienLogo';
 import { Container } from '../atoms/index';
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import { up, down, between, only } from 'styled-breakpoints';
 
 const Nav = () => {
@@ -12,7 +14,17 @@ const Nav = () => {
           <div>
             <AlientLogo />
           </div>
-          <Title>All the resourceful links in one place.</Title>
+          <LinkWrapper>
+            <div>
+              <Link href='/thestack'>/thestacks</Link>
+            </div>
+            <div>
+              <Link href='/thestack'>/motionstuff</Link>
+            </div>
+            <div>
+              <Link href='/thestack'>/thestacks</Link>
+            </div>
+          </LinkWrapper>
         </Flex>
       </Container>
     </div>
@@ -21,7 +33,6 @@ const Nav = () => {
 
 const Flex = styled.div`
   display: flex;
-
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
@@ -30,11 +41,27 @@ const Flex = styled.div`
     flex-direction: row;
   }
 `;
+
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  backdrop-filter: blur(35px);
+  a {
+    color: ${({ theme }) => theme.colors.dark};
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 1rem;
+
+    :hover {
+      color: #ea5455;
+    }
+  }
+`;
 const Title = styled.h1`
   color: dark;
   font-size: 1.2em;
-
-  margin-top: 1rem;
 
   ${up('md')} {
     font-size: 1.5em;

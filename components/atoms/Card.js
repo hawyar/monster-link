@@ -28,7 +28,7 @@ const Card = ({ data }) => {
       </a>
       <p>{truncString(Description, 50, '...')}</p>
       <BadeWrapper>
-        {Category.map((el) => {
+        {Category.filter((el) => el != undefined).map((el) => {
           return <Badge data={el} />;
         })}
       </BadeWrapper>
@@ -37,12 +37,19 @@ const Card = ({ data }) => {
 };
 
 const Wrapper = styled.div`
+  min-height: 120px;
+  width: 240px;
   position: relative;
-  box-shadow: 10px 10px 118px 13px rgba(0, 0, 0, 0.06);
   margin-top: 3rem;
-  background-color: #eeeeee;
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 1px solid #efefef;
+  background-color: transparent;
+  transition: border 0.3s ease-in-out;
+
+  :hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
 
   h3 {
     width: 90%;
@@ -55,9 +62,6 @@ const Wrapper = styled.div`
     width: 90%;
     line-height: 1.2;
   }
-
-  min-height: 120px;
-  width: 240px;
 `;
 
 const IconWrapper = styled(motion.span)`
