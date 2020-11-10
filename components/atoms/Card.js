@@ -25,7 +25,7 @@ const Card = ({ data }) => {
           whileHover={{ scale: 1.08 }}
           transition={{ ease: 'easeOut', duration: 0.2 }}
         >
-          <ExternalLink width={18} color='#fff' />
+          <ExternalLink width={18} color='#000' />
         </IconWrapper>
       </a>
       <p>{truncString(Description, 50, '...')}</p>
@@ -76,7 +76,11 @@ const IconWrapper = styled(motion.span)`
   right: 10px;
   padding: 8px;
   border-radius: 50%;
-  background-color: #000;
+
+  transition: background-color ease-in-out 0.2s;
+  :hover {
+    background-color: #e25822;
+  }
 `;
 
 const BadeWrapper = styled.div`

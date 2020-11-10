@@ -54,10 +54,8 @@ export const TextArea = styled.textarea`
     inset 0 1px 2px rgba(67, 90, 111, 0.14);
 
   background-color: white;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border: 3;
+
   padding: 10px 10px;
   width: 100%;
   cursor: text;

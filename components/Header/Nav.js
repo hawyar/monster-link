@@ -11,12 +11,11 @@ const Nav = () => {
     <div>
       <StyledNav>
         <Wrapper>
-          <div>
-            <AlientLogo />
+          <div className='hover'>
+            <Link href='/'>
+              <AlientLogo />
+            </Link>
           </div>
-          <LinkWrapper>
-            <Link href='/thestack'>» thestacks</Link>
-          </LinkWrapper>
         </Wrapper>
       </StyledNav>
     </div>
@@ -32,10 +31,9 @@ const StyledNav = styled.nav`
 
 const Wrapper = styled.div`
   display: flex;
-  padding: 1rem 12rem;
   margin: 0 auto;
-  flex-direction: row;
-  justify-content: space-between;
+  padding: 1rem 0;
+  justify-content: center;
   align-items: center;
   width: 100%;
   backdrop-filter: saturate(180%) blur(20px);
@@ -44,22 +42,9 @@ const Wrapper = styled.div`
   ::after {
     background-color: rgba(214, 214, 214, 0.4);
   }
-`;
 
-const LinkWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-
-  a {
-    color: ${({ theme }) => theme.colors.dark};
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 1rem;
-
-    :hover {
-      color: #ea5455;
-    }
+  .hover {
+    cursor: pointer;
   }
 `;
 
