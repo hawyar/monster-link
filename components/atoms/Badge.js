@@ -13,11 +13,11 @@ const Badge = ({ data }) => {
 const StyledBadge = styled.div`
   margin-right: 5px;
   margin-bottom: 5px;
-  padding: 5px 8px;
+  padding: 8px 12px;
   border-radius: 20px;
-  background-color: #e25822;
-  display: inline-block;
   color: black;
+  background-color: #dedef0;
+  display: inline-block;
   font-size: 12px;
   bottom: 1rem;
 

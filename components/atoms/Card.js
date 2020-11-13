@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   border: 1px solid #efefef;
   background-color: transparent;
   transition: border 0.3s ease-in-out;
-
+  cursor: pointer;
   ${down('sm')} {
     width: 80%;
   }
@@ -66,6 +66,7 @@ const Wrapper = styled.div`
 
   p {
     width: 90%;
+    font-size: 0.9em;
     line-height: 1.2;
   }
 `;
@@ -79,7 +80,6 @@ const IconWrapper = styled(motion.span)`
 
   transition: background-color ease-in-out 0.2s;
   :hover {
-    background-color: #e25822;
   }
 `;
 
