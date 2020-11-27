@@ -3,6 +3,7 @@ import Badge from './Badge';
 import { motion } from 'framer-motion';
 import { up, down, between, only } from 'styled-breakpoints';
 import useCopyClipboard from '../../lib/useCopyClipboard';
+
 function truncString(str, max, add) {
   add = add || '...';
   return typeof str === 'string' && str.length > max
@@ -25,7 +26,6 @@ const Card = ({ data }) => {
           whileHover={{ scale: 1.08 }}
           transition={{ ease: 'easeOut', duration: 0.2 }}
           onClick={() => {
-            console.log('copied');
             handleCopy(URL);
           }}
         >

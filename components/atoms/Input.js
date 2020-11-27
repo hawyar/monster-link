@@ -37,10 +37,8 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-  -webkit-writing-mode: horizontal-tb !important;
   writing-mode: horizontal-tb;
   text-rendering: auto;
-  color: -internal-light-dark(black, white);
   letter-spacing: normal;
   word-spacing: normal;
   text-transform: none;
@@ -55,7 +53,6 @@ export const TextArea = styled.textarea`
 
   background-color: white;
   border: 3;
-
   padding: 10px 10px;
   width: 100%;
   cursor: text;
