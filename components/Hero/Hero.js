@@ -3,7 +3,7 @@ import { Flex, Spacer } from '@chakra-ui/react';
 const Hero = () => {
   return (
     <div>
-      <Box bg='gray.50' w='100%' margin='0 auto' py={12} px={[4, 8, 16, 36]}>
+      <Box bg='red.500' w='100%' margin='0 auto' px={[4, 8, 16, 36]}>
         <Flex justifyContent='space-between'>
           <Text
             fontSize='3xl'

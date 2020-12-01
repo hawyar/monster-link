@@ -1,9 +1,9 @@
 import React from 'react';
 import AlientLogo from '../SVG/AlienLogo';
 import Link from 'next/link';
-import { Flex, useColorMode, IconButton } from '@chakra-ui/react';
-import { BiSun } from 'react-icons/bi';
-import { IoMdMoon } from 'react-icons/io';
+import { Flex, useColorMode, Button, useDisclosure } from '@chakra-ui/react';
+
+import SignupModal from '../SignupModal';
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -12,13 +12,15 @@ const Nav = () => {
     <div>
       <Flex w='100%' justify='space-between' mb={4}>
         <Link href='/'>
-          <AlientLogo stroke={colorMode === 'dark' ? '#E2E8F0' : '#1A202C'} />
+          <a>
+            <AlientLogo stroke={colorMode === 'dark' ? '#E2E8F0' : '#1A202C'} />
+          </a>
         </Link>
-        <IconButton
-          onClick={toggleColorMode}
-          aria-label='Color mode'
-          icon={colorMode === 'light' ? <IoMdMoon /> : <BiSun />}
-        />
+        <Link href='/register'>
+          <a>
+            <Button>Sign in</Button>
+          </a>
+        </Link>
       </Flex>
     </div>
   );

@@ -1,10 +1,9 @@
 import Layout from '../components/Layout';
 import Nav from '../components/Header/Nav';
-import Hero from '../components/Hero/Hero';
-import Form from '../components/Inputs/Form';
 import GridView from '../components/GridView';
 import Featured from '../components/Featured';
 import Head from 'next/head';
+import ColorSwitcher from '../components/ColorSwitcher';
 export default function Home() {
   return (
     <Layout>

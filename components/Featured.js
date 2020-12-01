@@ -1,4 +1,16 @@
-import { Box, Flex, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Stack,
+  Text,
+  useColorModeValue,
+  Input,
+  InputGroup,
+  InputRightAddon,
+  Button,
+  Center,
+  Heading,
+} from '@chakra-ui/react';
 import { BsPlayFill } from 'react-icons/bs';
 import { RiBookFill } from 'react-icons/ri';
 
@@ -18,30 +30,48 @@ const Featured = () => {
         direction={['column', 'row']}
         spacing='24px'
         w='100%'
-        height='380px'
         borderRadius='5px'
-        pt={12}
+        pt={16}
+        pb={24}
       >
-        <Box bg='' w={['100%', '100%', '620px']} mb={['6', '6', '0']}>
-          <Text fontSize='4xl' lineHeight='1.1'>
-            Resourceful things for all creatives
-          </Text>
-        </Box>
-        <Box
-          bg='orange.200'
-          borderRadius='md'
-          width='100%'
-          boxShadow='3'
-          height='100%'
-        ></Box>
+        <Stack
+          w={['100%', '100%', '620px']}
+          direction='column'
+          margin='0 auto'
+          justify='center'
+        >
+          <Heading
+            as='h3'
+            size='2xl'
+            lineHeight='1.1'
+            fontWeight='900'
+            textAlign='center'
+            letterSpacing={['-.8px', '-1px', '-1px']}
+          >
+            Shorten your links <br />
+            Explore others
+          </Heading>
+          <Center pt={['6', '12']}>
+            <Stack direction={['column', 'column', 'row']}>
+              <Input
+                type='text'
+                w={['100%', '320px']}
+                placeholder='Enter link'
+              />
+              <Button ml={[0, 2]} size='md'>
+                Shorten it
+              </Button>
+            </Stack>
+          </Center>
+        </Stack>
       </Stack>
       <Stack
         direction={['column', 'column', 'row']}
         spacing={6}
-        my={12}
+        margin='0 auto'
         w={['100%', '620px']}
       >
-        {categories.map((el) => {
+        {/* {categories.map((el) => {
           return (
             <Box
               px={8}
@@ -56,7 +86,7 @@ const Featured = () => {
               </Flex>
             </Box>
           );
-        })}
+        })} */}
       </Stack>
     </Box>
   );
