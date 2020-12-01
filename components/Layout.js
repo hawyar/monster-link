@@ -1,12 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import { Box } from '@chakra-ui/react';
+
 const Layout = ({ children }) => {
-  return <Container>{children}</Container>;
+  return (
+    <Box w='100%' margin='0 auto' py={4} px={[4, 8, 16, 36]}>
+      {children}
+    </Box>
+  );
 };
 
-const Container = styled.div`
-  width: 100%;
-  margin: 0;
-  font-family: 'Manrope';
-`;
 export default Layout;

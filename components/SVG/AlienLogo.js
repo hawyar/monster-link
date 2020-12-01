@@ -1,12 +1,11 @@
 const AlienLogo = (props) => {
   return (
     <svg
-      className='prefix__icon prefix__icon-tabler prefix__icon-tabler-alien'
       width={35}
       height={35}
       viewBox='0 0 24 24'
       strokeWidth={1.5}
-      stroke='currentColor'
+      stroke={props.stroke || ''}
       fill='none'
       strokeLinecap='round'
       strokeLinejoin='round'

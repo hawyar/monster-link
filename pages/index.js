@@ -3,9 +3,8 @@ import Nav from '../components/Header/Nav';
 import Hero from '../components/Hero/Hero';
 import Form from '../components/Inputs/Form';
 import GridView from '../components/GridView';
+import Featured from '../components/Featured';
 import Head from 'next/head';
-import ChooseStarter from '../components/ChooseStarter';
-
 export default function Home() {
   return (
     <Layout>
@@ -19,7 +18,7 @@ export default function Home() {
         <meta property='og:title' content='Monster link' key='title' />
       </Head>
       <Nav />
-      <Hero />
+      <Featured />
 
       <GridView />
     </Layout>
