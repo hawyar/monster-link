@@ -8,7 +8,8 @@ export default function Home() {
     <Layout>
       <Head>
         <title>
-          Monster - A curated collection of resourceful link powered by AIrtable
+          Monster - A curated collection of resourceful links powered by
+          Airtable
         </title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <link

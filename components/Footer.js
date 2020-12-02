@@ -5,7 +5,7 @@ const Footer = () => {
     <Box pt={12} px={12}>
       <Center>
         <VStack>
-          <Text align='center'>Open Source Project</Text>
+          <Text align='center'>Made with ❤️ in North Manchester</Text>
           <Link
             fontWeight='600'
             color='blue.900'

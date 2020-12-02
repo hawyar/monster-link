@@ -8,12 +8,10 @@ import {
   Text,
   Box,
   useColorModeValue,
-  Stack,
   SimpleGrid,
 } from '@chakra-ui/react';
 
-const url =
-  'https://api.airtable.com/v0/appO0y82wHen9gi4D/Linkbook?pageSize=50';
+const url = 'https://api.airtable.com/v0/appO0y82wHen9gi4D/Links?pageSize=50';
 
 const fetcher = () =>
   axios
