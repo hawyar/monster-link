@@ -47,9 +47,8 @@ const Featured = () => {
       >
         {categories.map((el) => {
           return (
-            <div>
+            <div key={el.id}>
               <Box
-                key={el.id}
                 px={8}
                 py={6}
                 bg={el.color}

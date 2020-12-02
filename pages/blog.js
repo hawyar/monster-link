@@ -1,8 +1,6 @@
 import Layout from '../components/Layout';
-import Nav from '../components/Header/Nav';
 import Head from 'next/head';
-import Featured from '../components/Featured';
-
+import { Text } from '@chakra-ui/react';
 export default function blog() {
   return (
     <Layout>
@@ -15,8 +13,7 @@ export default function blog() {
       <Head>
         <meta property='og:title' content='Monster link' key='title' />
       </Head>
-      <Nav />
-      <Featured />
+      <Text>Blog Page</Text>
     </Layout>
   );
 }
