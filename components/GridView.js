@@ -1,9 +1,16 @@
 import { useState } from 'react';
 import useSWR from 'swr';
 import axios from 'axios';
-import Card from './atoms/Card';
+import Card from './Card';
 import Fuse from 'fuse.js';
-import { Input, Text, Box, useColorModeValue, Stack } from '@chakra-ui/react';
+import {
+  Input,
+  Text,
+  Box,
+  useColorModeValue,
+  Stack,
+  SimpleGrid,
+} from '@chakra-ui/react';
 
 const url =
   'https://api.airtable.com/v0/appO0y82wHen9gi4D/Linkbook?pageSize=50';
@@ -49,23 +56,20 @@ const GridView = () => {
     <div>
       <div>
         <Box mb={12}>
-          <Text fontSize='lg' fontWeight='bold' letterSpacing='-.2px' mb='4'>
-            Recently added
-          </Text>
           <Input
-            width={['100%', '100%', '360px']}
+            width={['100%', '360px']}
             value={search}
             placeholder='Search by name, category, or description'
             onChange={handleChange}
           />
         </Box>
 
-        <Stack spacing={8}>
+        <SimpleGrid columns={[1, 1, 1, 3]} spacing={5}>
           {' '}
           {result.map((record) => (
             <Card data={record} key={record.id || record.item.id} />
           ))}
-        </Stack>
+        </SimpleGrid>
       </div>
     </div>
   );

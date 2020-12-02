@@ -1,5 +1,4 @@
 import Layout from '../components/Layout';
-import Nav from '../components/Header/Nav';
 import Head from 'next/head';
 import {
   Center,
@@ -10,11 +9,11 @@ import {
   InputGroup,
   InputRightElement,
   Button,
-  Box,
   Text,
   Divider,
 } from '@chakra-ui/react';
 import { RiGithubFill } from 'react-icons/ri';
+import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
   const [show, setShow] = React.useState(false);
@@ -30,21 +29,22 @@ const Register = () => {
       <Head>
         <meta property='og:title' content='Monster link' key='title' />
       </Head>
-      <Nav />
 
-      <Center>
+      <Center mb={24}>
         <Stack mt={6}>
           <Heading
-            siz='2xl'
+            siz='3xl'
             fontWeight='700'
             letterSpacing='-1px'
             mb={6}
             textAlign='center'
           >
-            Register
+            Sign up to Monster
           </Heading>
 
           <Flex
+            mb={3}
+            cursor='pointer'
             bg='#24292e'
             align='center'
             justify='center'
@@ -56,9 +56,26 @@ const Register = () => {
               Signup with GitHub
             </Text>
           </Flex>
+          <Flex
+            cursor='pointer'
+            bg='gray.100'
+            align='center'
+            justify='center'
+            p={4}
+            borderRadius='md'
+          >
+            <FcGoogle size='24' />
+            <Text fontWeight='bold' pl={2} color='gray.900'>
+              Signup with Google
+            </Text>
+          </Flex>
 
           <Divider pt={8} mb={8} />
-
+          <Center>
+            <Heading size='md' mb={3}>
+              Continue with email
+            </Heading>
+          </Center>
           <Flex direction='column'>
             <Input placeholder='Email Address' width={['100%', '320px']} />
 
@@ -74,6 +91,10 @@ const Register = () => {
                 </Button>
               </InputRightElement>
             </InputGroup>
+
+            <Text fontSize='sm' mt={2}>
+              Forgot your password?
+            </Text>
           </Flex>
         </Stack>
       </Center>

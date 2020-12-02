@@ -1,22 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import { Text, Box, Center, Link, Flex, VStack } from '@chakra-ui/react';
 const Footer = () => {
   return (
-    <StyledFooter>
-      <p>Made with and Next.js & Airtable</p>
-    </StyledFooter>
+    <Box pt={12} px={12}>
+      <Center>
+        <VStack>
+          <Text align='center'>Open Source Project</Text>
+          <Link
+            fontWeight='600'
+            color='blue.900'
+            href='https://github.com/hawyar/monster-link'
+          >
+            Contribute
+          </Link>
+        </VStack>
+      </Center>
+    </Box>
   );
 };
 
-const StyledFooter = styled.footer`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
-
-  p {
-    font-weight: 500;
-  }
-`;
 export default Footer;
