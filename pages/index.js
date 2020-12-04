@@ -3,7 +3,8 @@ import GridView from '../components/GridView';
 import Featured from '../components/Featured';
 import Head from 'next/head';
 import Hero from '../components/Hero';
-export default function Home() {
+import '../lib/supabase';
+export default function Home({ data }) {
   return (
     <Layout>
       <Head>
@@ -39,6 +40,24 @@ export default function Home() {
       <Hero />
       <Featured />
       <GridView />
+      {JSON.stringify({ data })}
     </Layout>
   );
 }
+
+// This will shoot the server at api/users
+
+// export async function getServerSideProps() {
+//   const res = await fetch(`http://localhost:3000/api/users`);
+//   const data = await res.json();
+
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: { data }, // will be passed to the page component as props
+//   };
+// }
