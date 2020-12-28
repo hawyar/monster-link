@@ -19,25 +19,29 @@ const Card = ({ data }) => {
   const bg = useColorModeValue('gray.200', 'gray.700');
   const toast = useToast();
 
+  const MotionBox = motion.custom(Box);
+
   return (
     <Box
-      // minHeight='160px'
+      minHeight='120px'
       bg={bg}
       position='relative'
       p={6}
       borderRadius='md'
-      cursor='pointer'
-      width={['320px']}
+      width='320px'
     >
-      {/* <a href={URL} target='_blank' rel='noopener noreferrer'> */}
-      <Text fontSize='xl' fontWeight='medium' lineHeight='1.3'>
-        {Name}
-      </Text>
+      <a href={URL} target='_blank' rel='noopener noreferrer'>
+        <Text maxWidth='90%' fontSize='xl' fontWeight='medium' lineHeight='1.3'>
+          {Name}
+        </Text>
+      </a>
 
-      <Box
+      <MotionBox
+        whileHover={{ scale: 1.1 }}
+        cursor='pointer'
         pos='absolute'
-        right='5'
-        top='5'
+        right='4'
+        top='4'
         bg='gray.300'
         p={2}
         borderRadius='full'
@@ -65,8 +69,8 @@ const Card = ({ data }) => {
             d='M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z'
           />
         </svg>
-      </Box>
-      <Text color='gray.600' isTruncated my={2}>
+      </MotionBox>
+      <Text maxWidth='90%' color='gray.600' my={2} noOfLines={2}>
         {Description}
       </Text>
       <Flex mt={4}>

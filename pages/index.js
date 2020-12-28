@@ -3,7 +3,6 @@ import GridView from '../components/GridView';
 import Featured from '../components/Featured';
 import Head from 'next/head';
 import Hero from '../components/Hero';
-import '../lib/supabase';
 export default function Home({ data }) {
   return (
     <Layout>
@@ -36,11 +35,9 @@ export default function Home({ data }) {
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
       </Head>
-      <Head></Head>
       <Hero />
       <Featured />
       <GridView />
-      {JSON.stringify({ data })}
     </Layout>
   );
 }

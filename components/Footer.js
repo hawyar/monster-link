@@ -6,13 +6,6 @@ const Footer = () => {
       <Center>
         <VStack>
           <Text align='center'>Made with ❤️ in North Manchester</Text>
-          <Link
-            fontWeight='600'
-            color='blue.900'
-            href='https://github.com/hawyar/monster-link'
-          >
-            Contribute
-          </Link>
         </VStack>
       </Center>
     </Box>
